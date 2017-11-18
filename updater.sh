@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Command command line parameters
 while [ "$1" != "" ]; do
     case $1 in

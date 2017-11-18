@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -e
+
 # release name
 NAME="authority"
 CHAIN_NAME="${NAME}_node"
@@ -31,8 +34,8 @@ RESET=`tput sgr0`
 
 bane() {
     echo "${GREEN}[.] Unregistered old daemon service${RESET}"
-    sudo systemctl stop ${SERVICE_NAME}
-    sudo systemctl disable ${SERVICE_NAME}
+    sudo systemctl stop ${SERVICE_NAME} || true
+    sudo systemctl disable ${SERVICE_NAME} || true
     sudo rm -fv /etc/systemd/system/${SERVICE_NAME}
     sudo systemctl daemon-reload
     sudo systemctl reset-failed

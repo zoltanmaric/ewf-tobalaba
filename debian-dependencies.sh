@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # making it look cool
 RED=`tput setaf 1`
 GREEN=`tput setaf 2`
